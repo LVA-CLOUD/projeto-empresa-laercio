@@ -1,30 +1,20 @@
 /* =======================
    VARIÁVEIS GLOBAIS
 ======================= */
-
 :root {
-    --primary: #0A1F44;
-    /* Azul institucional forte */
-    --primary-dark: #050B1C;
-    /* Azul ainda mais profundo */
-    --secondary: #1E3A8A;
-    /* Azul moderno */
-    --accent: #2563EB;
-    /* Azul vibrante */
-    --dark-bg: #0B0F19;
-    /* Preto elegante */
-    --darker-bg: #05070D;
-    /* Preto profundo */
-    --light: #F8FAFC;
-    /* Branco suave */
-    --success-green: #198754;
-    /* Verde padrão sucesso */
+    --primary: #0A1F44; /* Azul institucional forte */
+    --primary-dark: #050B1C; /* Azul ainda mais profundo */
+    --secondary: #1E3A8A; /* Azul moderno */
+    --accent: #2563EB; /* Azul vibrante */
+    --dark-bg: #0B0F19; /* Preto elegante */
+    --darker-bg: #05070D; /* Preto profundo */
+    --light: #F8FAFC; /* Branco suave */
+    --success-green: #198754; /* Verde padrão sucesso */
 }
 
 /* =======================
    GLOBAL
 ======================= */
-
 html {
     scroll-behavior: smooth;
 }
@@ -32,11 +22,15 @@ html {
 body {
     padding-top: 70px;
     font-family: 'Segoe UI', sans-serif;
-    background-color: var(--dark-bg);
     color: var(--light);
+    background: linear-gradient(135deg, #05070D, #0A1F44, #134e4a);
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-/* Estilos do Preloader */
+/* =======================
+   PRELOADER
+======================= */
 #preloader {
     position: fixed;
     top: 0;
@@ -81,46 +75,22 @@ body {
     animation: loading 2.5s forwards ease-in-out;
 }
 
-/* Animações Globais */
 @keyframes pulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    50% {
-        transform: scale(1.1);
-        opacity: 0.7;
-    }
+    0%,100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.1); opacity: 0.7; }
 }
 
 @keyframes loading {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 100%;
-    }
+    0% { width: 0; }
+    100% { width: 100%; }
 }
 
 @keyframes pop {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
 }
 
-/* Classe para esconder o preloader */
 .loader-finish {
     opacity: 0;
     visibility: hidden;
@@ -139,7 +109,6 @@ a:hover {
 /* =======================
    NAVBAR
 ======================= */
-
 .navbar {
     background: rgba(15, 23, 42, 0.9) !important;
     backdrop-filter: blur(10px);
@@ -153,7 +122,6 @@ a:hover {
 /* =======================
    CARROSSEL
 ======================= */
-
 .carousel-item {
     height: 100vh;
 }
@@ -178,9 +146,8 @@ a:hover {
 }
 
 /* =======================
-   BOTÕES E ANIMAÇÕES DE COMPRA
+   BOTÕES E ANIMAÇÕES
 ======================= */
-
 .btn-startup {
     background: linear-gradient(45deg, var(--primary), var(--secondary));
     border: none;
@@ -196,7 +163,6 @@ a:hover {
     box-shadow: 0 0 20px var(--accent);
 }
 
-/* Efeito de Sucesso no Botão "Adicionado" */
 .btn-success-animated {
     background-color: var(--success-green) !important;
     border-color: var(--success-green) !important;
@@ -205,7 +171,6 @@ a:hover {
     transition: all 0.3s ease;
 }
 
-/* Animação de "pulo" no Badge do Carrinho */
 .cart-pop {
     animation: pop 0.3s ease-out;
 }
@@ -213,18 +178,35 @@ a:hover {
 /* =======================
    SEÇÕES E BOXES
 ======================= */
-
 section {
-    padding: 80px 0;
+    position: relative;
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.wave-divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+}
+
+.wave-divider svg {
+    display: block;
+    width: 100%;
+    height: 120px;
 }
 
 .service-box,
 .solution-box,
 .tech-box {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.04);
     border-radius: 15px;
     padding: 35px 25px;
-    transition: 0.3s;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: 0.4s;
     height: 100%;
 }
 
@@ -232,8 +214,8 @@ section {
 .solution-box:hover,
 .tech-box:hover {
     transform: translateY(-10px);
-    background: rgba(37, 99, 235, 0.08);
-    box-shadow: 0 0 25px rgba(37, 99, 235, 0.25);
+    box-shadow: 0 0 35px rgba(37, 99, 235, 0.35);
+    border: 1px solid rgba(37, 99, 235, 0.4);
 }
 
 .solution-icon,
@@ -246,7 +228,6 @@ section {
 /* =======================
    NÚMEROS
 ======================= */
-
 #numeros {
     background: linear-gradient(45deg, var(--primary), var(--secondary));
     color: white;
@@ -260,7 +241,6 @@ section {
 /* =======================
    DEPOIMENTOS
 ======================= */
-
 .testimonial {
     background: rgba(255, 255, 255, 0.05);
     padding: 30px;
@@ -293,7 +273,6 @@ section {
 /* =======================
    MAPA E CONTATO
 ======================= */
-
 .map-container iframe {
     width: 100%;
     height: 500px;
@@ -324,7 +303,6 @@ section {
 /* =======================
    LOJA E CARRINHO (OFFCANVAS)
 ======================= */
-
 .product-card {
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.05) !important;
@@ -344,7 +322,6 @@ section {
 
 .ob-cart {
     background-color: #0f172a;
-    /* Azul escuro combinando com a Navbar */
     color: white;
 }
 
@@ -407,13 +384,11 @@ section {
 .payment-icons i:hover {
     transform: scale(1.2);
     color: #f7931a !important;
-    /* Cor do Bitcoin */
 }
 
 /* =======================
    FOOTER
 ======================= */
-
 footer {
     background: var(--darker-bg);
     padding: 50px 0;
@@ -423,13 +398,10 @@ footer {
     color: #ffffff;
 }
 
-/* Definição da sua nova classe personalizada */
 .text-auto {
     color: rgba(255, 255, 255, 0.7) !important;
-    /* Branco com 70% de opacidade */
 }
 
-/* Garante que os títulos e textos dos cards fiquem visíveis no tema escuro */
 .card-body .card-title {
     color: #ffffff !important;
 }
@@ -438,8 +410,16 @@ footer {
     color: #e0e0e0 !important;
 }
 
-/* Ajuste para o rodapé do card que estava branco */
 .card-footer.bg-white {
     background-color: rgba(255, 255, 255, 0.05) !important;
     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* =======================
+   AJUSTES FINAIS PARA SEÇÕES COM O FUNDO NOVO
+======================= */
+main {
+    background: linear-gradient(135deg, #05070D, #0A1F44, #134e4a);
+    background-attachment: fixed;
+    padding-top: 120px;
 }
