@@ -1,15 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Poiret+One&display=swap');
+
 /* =======================
    VARIÁVEIS GLOBAIS
 ======================= */
 :root {
-    --primary: #0A1F44; /* Azul institucional forte */
-    --primary-dark: #050B1C; /* Azul ainda mais profundo */
-    --secondary: #1E3A8A; /* Azul moderno */
-    --accent: #2563EB; /* Azul vibrante */
-    --dark-bg: #0B0F19; /* Preto elegante */
-    --darker-bg: #05070D; /* Preto profundo */
-    --light: #F8FAFC; /* Branco suave */
-    --success-green: #198754; /* Verde padrão sucesso */
+    --primary: #0A1F44;
+    /* Azul institucional forte */
+    --primary-dark: #050B1C;
+    /* Azul ainda mais profundo */
+    --secondary: #1E3A8A;
+    /* Azul moderno */
+    --accent: #2563EB;
+    /* Azul vibrante */
+    --dark-bg: #0B0F19;
+    /* Preto elegante */
+    --darker-bg: #05070D;
+    /* Preto profundo */
+    --light: #F8FAFC;
+    /* Branco suave */
+    --success-green: #198754;
+    /* Verde padrão sucesso */
 }
 
 /* =======================
@@ -18,15 +28,19 @@
 html {
     scroll-behavior: smooth;
 }
+H1,h2, p{
+  font-family: "Poiret One", sans-serif;
+}
+
 
 body {
     padding-top: 70px;
-    font-family: 'Segoe UI', sans-serif;
     color: var(--light);
     background: linear-gradient(135deg, #05070D, #0A1F44, #134e4a);
     background-attachment: fixed;
     background-size: cover;
 }
+
 
 /* =======================
    PRELOADER
@@ -76,19 +90,41 @@ body {
 }
 
 @keyframes pulse {
-    0%,100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.1); opacity: 0.7; }
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
 }
 
 @keyframes loading {
-    0% { width: 0; }
-    100% { width: 100%; }
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
 }
 
 @keyframes pop {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .loader-finish {
@@ -422,4 +458,40 @@ main {
     background: linear-gradient(135deg, #05070D, #0A1F44, #134e4a);
     background-attachment: fixed;
     padding-top: 120px;
+}
+
+/* Ajuste para o Carrossel de Depoimentos Compacto */
+#carouselFeedback {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#carouselFeedback .carousel-item {
+    height: auto;
+    /* Importante: remove o 100vh que estava no global */
+    padding: 10px 0;
+}
+
+#carouselFeedback .carousel-item img {
+    height: auto;
+    /* Remove o filtro de brilho para textos */
+    filter: none;
+}
+
+/* Cor dos pontinhos do carrossel */
+#carouselFeedback .carousel-indicators [button],
+#carouselFeedback .carousel-indicators button {
+    background-color: var(--success-green) !important;
+    opacity: 0.4;
+    border: none;
+}
+
+#carouselFeedback .carousel-indicators .active {
+    opacity: 1;
+}
+
+/* Ajuste na seção para não ocupar espaço excessivo */
+.py-4 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
 }
